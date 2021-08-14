@@ -1,15 +1,12 @@
 package com.example.carGame.domain.values;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public class Name {
 
-    private final String name;
-
-    public Name(String name){
-        this.name = name;
-    }
-
-    public String getValue(){
-        return this.name;
-    }
+    private final String value;
 
 }

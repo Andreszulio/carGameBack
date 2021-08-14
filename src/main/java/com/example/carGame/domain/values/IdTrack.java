@@ -1,12 +1,11 @@
 package com.example.carGame.domain.values;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class IdTrack {
 
     private final String idTrack;
-
-    public IdTrack(String idTrack){
-        this.idTrack = idTrack;
-    }
 
     public static IdTrack of(String idTrack){
         return new IdTrack(idTrack);

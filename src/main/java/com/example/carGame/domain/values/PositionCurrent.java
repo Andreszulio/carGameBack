@@ -1,14 +1,12 @@
 package com.example.carGame.domain.values;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public class PositionCurrent {
 
-    private final String positionCurrent;
+    private final String value;
 
-    public PositionCurrent(String positionCurrent){
-        this.positionCurrent = positionCurrent;
-    }
-
-    public String getValue() {
-        return this.positionCurrent;
-    }
 }

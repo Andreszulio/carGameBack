@@ -18,7 +18,7 @@ public class LaneDTO {
     private String idCar;
     private String idGame;
     private String idTrack;
-    private String positionCurrent;
+    private String idDriver;
 
 
 }

@@ -21,5 +21,4 @@ public class TrackDTO {
     private String positionCurrent;
     private String finalDisplacement;
 
-
 }

@@ -1,12 +1,11 @@
 package com.example.carGame.domain.values;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class IdLane {
 
     private final String idLane;
-
-    public IdLane(String idLane){
-        this.idLane = idLane;
-    }
 
     public static IdLane of(String idLane){
         return new IdLane(idLane);

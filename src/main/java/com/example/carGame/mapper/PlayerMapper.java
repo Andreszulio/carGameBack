@@ -13,8 +13,8 @@ import java.util.function.Function;
 @Component
 public class PlayerMapper {
 
-    public Function<PlayerDTO, Player> mapperToPlayer(){
-        return playerDTO ->
+    public Function<PlayerDTO, Player> mapperToPlayer(String idPlayer){
+        return  playerDTO->
             new Player(
                     IdPlayer.of(playerDTO.getIdPlayer()),
                     IdCar.of(playerDTO.getIdCar()),

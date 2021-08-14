@@ -1,12 +1,11 @@
 package com.example.carGame.domain.values;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class IdPodium {
 
     private final String idPodium;
-
-    public IdPodium(String idPodium){
-        this.idPodium = idPodium;
-    }
 
     public static IdPodium of(String idPodium){
         return new IdPodium(idPodium);

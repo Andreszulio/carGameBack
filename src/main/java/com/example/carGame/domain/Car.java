@@ -1,37 +1,25 @@
 package com.example.carGame.domain;
 
-import com.example.carGame.domain.values.ConfirmationArrivalGoal;
-import com.example.carGame.domain.values.IdCar;
-import com.example.carGame.domain.values.IdLane;
-import com.example.carGame.domain.values.IdPlayer;
+import com.example.carGame.domain.values.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Getter
+@AllArgsConstructor
+@RequiredArgsConstructor
+@Document(collection = "Car")
 public class Car {
 
+    @Id
     private final IdCar idCar;
+
     private final IdPlayer idPlayer;
     private final IdLane idLane;
     private final ConfirmationArrivalGoal confirmationArrivalGoal;
+    private final IdDriver idDriver;
+    private final IdGame idGame;
 
-    public Car(IdCar idCar, IdPlayer idPlayer, IdLane idLane, ConfirmationArrivalGoal confirmationArrivalGoal) {
-        this.idCar = idCar;
-        this.idPlayer = idPlayer;
-        this.idLane = idLane;
-        this.confirmationArrivalGoal = confirmationArrivalGoal;
-    }
-
-    public IdCar getIdCar() {
-        return idCar;
-    }
-
-    public IdPlayer getIdPlayer() {
-        return idPlayer;
-    }
-
-    public IdLane getIdLane() {
-        return idLane;
-    }
-
-    public ConfirmationArrivalGoal getConfirmationArrivalGoal() {
-        return confirmationArrivalGoal;
-    }
 }

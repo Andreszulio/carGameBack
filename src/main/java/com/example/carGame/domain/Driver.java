@@ -5,21 +5,18 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Document(collection = "Lane")
-public class Lane {
+public class Driver {
 
     @Id
-    private final IdLane idLane;
+    private IdDriver idDriver;
 
-    private final IdCar idCar;
-    private final IdGame idGame;
-    private final IdTrack idTrack;
-    private final IdDriver idDriver;
-
+    private PositionCurrent positionCurrent;
+    private IdPlayer idPlayer;
+    private IdLane idLane;
+    private IdCar idCar;
 
 }

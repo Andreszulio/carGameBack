@@ -17,6 +17,8 @@ public class CarDTO {
 
     private String idPlayer;
     private String idLane;
-    private String confirmationArrivalGoal;
+    private Boolean confirmationArrivalGoal;
+    private String idDriver;
+    private String idGame;
 
 }

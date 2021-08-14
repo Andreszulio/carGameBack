@@ -1,15 +1,13 @@
 package com.example.carGame.domain.values;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public class ConfirmationArrivalGoal {
 
-    private final String confirmationArrivalGoal;
+    private final String value;
 
-    public ConfirmationArrivalGoal(String confirmationArrivalGoal){
-        this.confirmationArrivalGoal = confirmationArrivalGoal;
-    }
-
-    public String getValue(){
-        return this.confirmationArrivalGoal;
-    }
 
 }

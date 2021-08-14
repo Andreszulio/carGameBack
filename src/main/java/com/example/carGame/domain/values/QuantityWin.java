@@ -1,15 +1,12 @@
 package com.example.carGame.domain.values;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public class QuantityWin {
 
-    private final Integer quantityWin;
+    private final Integer value;
 
-    public QuantityWin(Integer quantityWin) {
-        this.quantityWin = quantityWin;
-    }
-
-
-    public Integer getValue() {
-        return quantityWin;
-    }
 }

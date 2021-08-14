@@ -1,4 +1,4 @@
-package com.example.carGame.domain;
+package com.example.carGame.dto;
 
 import com.example.carGame.domain.values.*;
 import lombok.AllArgsConstructor;
@@ -10,16 +10,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Document(collection = "Lane")
-public class Lane {
+@Document(collection = "Driver")
+public class DriverDTO {
 
     @Id
-    private final IdLane idLane;
+    private String idDriver;
 
-    private final IdCar idCar;
-    private final IdGame idGame;
-    private final IdTrack idTrack;
-    private final IdDriver idDriver;
-
+    private Integer positionCurrent;
+    private String idPlayer;
+    private String idLane;
+    private String idCar;
 
 }

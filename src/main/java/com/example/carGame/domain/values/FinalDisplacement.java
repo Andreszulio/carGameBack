@@ -1,15 +1,13 @@
 package com.example.carGame.domain.values;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public class FinalDisplacement {
 
 
-    private final String finalDisplacement;
+    private final String value;
 
-    public FinalDisplacement(String finalDisplacement){
-        this.finalDisplacement = finalDisplacement;
-    }
-
-    public String getValue(){
-        return this.finalDisplacement;
-    }
 }
