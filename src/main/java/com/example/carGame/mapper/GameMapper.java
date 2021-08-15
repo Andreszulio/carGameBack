@@ -1,5 +1,6 @@
 package com.example.carGame.mapper;
 
+import com.example.carGame.domain.Driver;
 import com.example.carGame.domain.Game;
 import com.example.carGame.domain.Player;
 import com.example.carGame.domain.Track;
@@ -14,18 +15,18 @@ import java.util.function.Function;
 public class GameMapper {
 
     public Function<GameDTO, Game> mapperToGame(){
-        return gameDTO ->
-                new Game(
-                        IdGame.of(gameDTO.getIdGame()),
-                        IdTrack.of(gameDTO.getIdTrack())
-                );
+        return createGame -> {
+            Game game = new Game();
+            game.setIdGame(createGame.getIdGame());
+            game.setIdTrack(createGame.getIdTrack());
+            return game;
+        };
     }
 
     public Function<Game, GameDTO> mapperToGameDTO(){
-        return game->
-                new GameDTO(
-                        game.getIdGame().getValue(),
-                        game.getIdTrack().getValue()
+        return game-> new GameDTO(
+                        game.getIdGame(),
+                        game.getIdTrack()
                 );
     }
 

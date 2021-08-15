@@ -1,7 +1,7 @@
-package com.example.carGame.router;
+package com.example.carGame.router.findsRouter;
 
 import com.example.carGame.dto.PlayerDTO;
-import com.example.carGame.useCase.FindPlayerUseCase;
+import com.example.carGame.useCase.findsUseCase.FindPlayerUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;

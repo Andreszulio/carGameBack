@@ -1,25 +1,26 @@
 package com.example.carGame.domain;
 
-import com.example.carGame.domain.values.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
+@Setter
 @AllArgsConstructor
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 @Document(collection = "Track")
 public class Track {
 
     @Id
-    private final String idTrack;
+    private String idTrack;
 
-    private final String idLane;
-    private final String idCar;
-    private final String idGame;
-    private final Integer positionCurrent;
-    private final String finalDisplacement;
+    private String idLane;
+    private String idCar;
+    private String idGame;
+    private Integer positionCurrent;
+    private String finalDisplacement;
 
 }

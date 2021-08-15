@@ -1,12 +1,13 @@
 package com.example.carGame.domain;
 
-import com.example.carGame.domain.values.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class Driver {

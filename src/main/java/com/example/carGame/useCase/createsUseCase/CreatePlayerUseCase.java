@@ -1,4 +1,5 @@
-package com.example.carGame.useCase;
+package com.example.carGame.useCase.createsUseCase;
+
 
 import com.example.carGame.dto.PlayerDTO;
 import com.example.carGame.mapper.PlayerMapper;
@@ -6,26 +7,26 @@ import com.example.carGame.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
-import reactor.core.publisher.Flux;
-
-import java.util.function.Supplier;
+import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class FindPlayerUseCase  {
+public class CreatePlayerUseCase  {
 
     private final PlayerRepository playerRepository;
     private final PlayerMapper playerMapper;
 
     @Autowired
-    public FindPlayerUseCase(PlayerRepository playerRepository, PlayerMapper playerMapper){
+    public CreatePlayerUseCase(PlayerRepository playerRepository, PlayerMapper playerMapper){
         this.playerRepository = playerRepository;
         this.playerMapper = playerMapper;
     }
 
-    public Flux<PlayerDTO> findAll(){
+    public Mono<PlayerDTO> apply(PlayerDTO playerDTO){
         return playerRepository
-                .findAll().map(playerMapper.mapperToPlayerDTO());
+                .save(playerMapper.mapperToPlayer(playerDTO.getIdPlayer())
+                .apply(playerDTO))
+                .thenReturn(playerDTO);
     }
 
 }

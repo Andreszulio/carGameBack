@@ -14,28 +14,24 @@ import java.util.function.Function;
 public class DriverMapper {
 
     public Function<DriverDTO, Driver> mapperToDriver(){
-        return driverDTO ->
-                new Driver(
-                        IdDriver.of(driverDTO.getIdDriver()),
-                        new PositionCurrent(driverDTO.getPositionCurrent()),
-                        IdPlayer.of(driverDTO.getIdPlayer()),
-                        IdLane.of(driverDTO.getIdLane()),
-                        IdCar.of(driverDTO.getIdCar())
-
-
-                );
+        return createDriver -> {
+            Driver driver = new Driver();
+            driver.setIdDriver(createDriver.getIdDriver());
+            driver.setPositionCurrent(createDriver.getPositionCurrent());
+            driver.setIdPlayer(createDriver.getIdPlayer());
+            driver.setIdCar(createDriver.getIdCar());
+            return driver;
+        };
     }
 
     public Function<Driver, DriverDTO> mapperToDriverDTO( ){
-        return driver ->
-                new DriverDTO(
-                        driver.getIdDriver().getValue(),
-                        driver.getPositionCurrent().getValue(),
-                        driver.getIdPlayer().getValue(),
-                        driver.getIdLane().getValue(),
-                        driver.getIdCar().getValue()
-
-                );
+        return driver -> new DriverDTO(
+            driver.getIdDriver(),
+            driver.getPositionCurrent(),
+            driver.getIdPlayer(),
+            driver.getIdLane(),
+            driver.getIdCar()
+        );
     }
 
 }

@@ -1,5 +1,4 @@
-package com.example.carGame.useCase;
-
+package com.example.carGame.useCase.findsUseCase;
 
 import com.example.carGame.dto.PlayerDTO;
 import com.example.carGame.mapper.PlayerMapper;
@@ -11,22 +10,22 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class CreatePlayerUseCase  {
+public class FindByIdPlayerUseCase {
 
     private final PlayerRepository playerRepository;
     private final PlayerMapper playerMapper;
 
     @Autowired
-    public CreatePlayerUseCase(PlayerRepository playerRepository, PlayerMapper playerMapper){
+    public FindByIdPlayerUseCase(PlayerRepository playerRepository, PlayerMapper playerMapper) {
         this.playerRepository = playerRepository;
         this.playerMapper = playerMapper;
     }
 
-    public Mono<PlayerDTO> apply(PlayerDTO playerDTO){
-        return playerRepository
-                .save(playerMapper.mapperToPlayer(playerDTO.getIdPlayer())
-                .apply(playerDTO))
-                .thenReturn(playerDTO);
+
+    public Mono<PlayerDTO> findById(String id) {
+        return playerRepository.findById(id)
+                .flatMap(player ->
+                        Mono.just(playerMapper.mapperToPlayerDTO().apply(player)));
     }
 
 }
