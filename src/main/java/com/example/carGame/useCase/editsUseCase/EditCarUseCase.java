@@ -1,4 +1,4 @@
-package com.example.carGame.useCase.createsUseCase;
+package com.example.carGame.useCase.editsUseCase;
 
 import com.example.carGame.dto.CarDTO;
 import com.example.carGame.mapper.CarMapper;
@@ -10,18 +10,18 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class CreateCarUseCase {
+public class EditCarUseCase {
 
     private final CarRepository carRepository;
     private final CarMapper carMapper;
 
     @Autowired
-    public CreateCarUseCase(CarRepository carRepository, CarMapper carMapper) {
+    public EditCarUseCase(CarRepository carRepository, CarMapper carMapper) {
         this.carRepository = carRepository;
         this.carMapper = carMapper;
     }
 
-    public Mono<CarDTO> createCar(CarDTO carDTO) {
+    public Mono<CarDTO> modifyCar(CarDTO carDTO){
         return carRepository
                 .save(carMapper.mapperToCar(carDTO.getIdCar())
                         .apply(carDTO))

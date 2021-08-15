@@ -1,4 +1,4 @@
-package com.example.carGame.useCase.createsUseCase;
+package com.example.carGame.useCase.editsUseCase;
 
 import com.example.carGame.dto.TrackDTO;
 import com.example.carGame.mapper.TrackMapper;
@@ -10,13 +10,13 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class CreateTrackUseCase {
+public class EditTrackUseCase {
 
     private final TrackRepository trackRepository;
     private final TrackMapper trackMapper;
 
     @Autowired
-    public CreateTrackUseCase(TrackRepository trackRepository, TrackMapper trackMapper) {
+    public EditTrackUseCase(TrackRepository trackRepository, TrackMapper trackMapper) {
         this.trackRepository = trackRepository;
         this.trackMapper = trackMapper;
     }

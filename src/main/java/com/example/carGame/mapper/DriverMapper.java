@@ -1,11 +1,7 @@
 package com.example.carGame.mapper;
 
-import com.example.carGame.domain.Car;
 import com.example.carGame.domain.Driver;
-import com.example.carGame.domain.values.*;
-import com.example.carGame.dto.CarDTO;
 import com.example.carGame.dto.DriverDTO;
-import io.netty.handler.timeout.IdleState;
 import org.springframework.stereotype.Component;
 
 import java.util.function.Function;
@@ -13,7 +9,7 @@ import java.util.function.Function;
 @Component
 public class DriverMapper {
 
-    public Function<DriverDTO, Driver> mapperToDriver(){
+    public Function<DriverDTO, Driver> mapperToDriver(String idDriver){
         return createDriver -> {
             Driver driver = new Driver();
             driver.setIdDriver(createDriver.getIdDriver());

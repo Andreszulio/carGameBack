@@ -1,4 +1,4 @@
-package com.example.carGame.useCase.createsUseCase;
+package com.example.carGame.useCase.editsUseCase;
 
 import com.example.carGame.dto.GameDTO;
 import com.example.carGame.mapper.GameMapper;
@@ -10,18 +10,18 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class CreateGameUseCase {
+public class EditGameUseCase {
 
     private final GameRepository gameRepository;
     private final GameMapper gameMapper;
 
     @Autowired
-    public CreateGameUseCase(GameRepository gameRepository, GameMapper gameMapper) {
+    public EditGameUseCase(GameRepository gameRepository, GameMapper gameMapper) {
         this.gameRepository = gameRepository;
         this.gameMapper = gameMapper;
     }
 
-    public Mono<GameDTO> apply(GameDTO gameDTO) {
+    public Mono<GameDTO> modifyGame(GameDTO gameDTO){
         return gameRepository.save(gameMapper.mapperToGame(gameDTO.getIdGame())
                         .apply(gameDTO))
                 .map(gameMapper.mapperToGameDTO());

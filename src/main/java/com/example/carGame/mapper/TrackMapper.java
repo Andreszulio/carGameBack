@@ -1,8 +1,6 @@
 package com.example.carGame.mapper;
 
-import com.example.carGame.domain.Podium;
 import com.example.carGame.domain.Track;
-import com.example.carGame.domain.values.*;
 import com.example.carGame.dto.TrackDTO;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +9,7 @@ import java.util.function.Function;
 @Component
 public class TrackMapper {
 
-    public Function<TrackDTO, Track> mapperToTrack(){
+    public Function<TrackDTO, Track> mapperToTrack(String idTrack){
         return createTrack -> {
             Track track = new Track();
             track.setIdTrack(createTrack.getIdTrack());

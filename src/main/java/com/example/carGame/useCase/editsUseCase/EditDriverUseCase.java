@@ -1,4 +1,4 @@
-package com.example.carGame.useCase.createsUseCase;
+package com.example.carGame.useCase.editsUseCase;
 
 import com.example.carGame.dto.DriverDTO;
 import com.example.carGame.mapper.DriverMapper;
@@ -10,18 +10,18 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class CreateDriverUseCase {
+public class EditDriverUseCase {
 
     private final DriverRepository driverRepository;
     private final DriverMapper driverMapper;
 
     @Autowired
-    public CreateDriverUseCase(DriverRepository driverRepository, DriverMapper driverMapper) {
+    public EditDriverUseCase(DriverRepository driverRepository, DriverMapper driverMapper) {
         this.driverRepository = driverRepository;
         this.driverMapper = driverMapper;
     }
 
-    public Mono<DriverDTO> apply(DriverDTO driverDTO) {
+    public Mono<DriverDTO> modifyDriver(DriverDTO driverDTO){
         return driverRepository.save(driverMapper.mapperToDriver(driverDTO.getIdDriver())
                         .apply(driverDTO))
                 .map(driverMapper.mapperToDriverDTO());

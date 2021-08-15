@@ -1,4 +1,4 @@
-package com.example.carGame.useCase.createsUseCase;
+package com.example.carGame.useCase.editsUseCase;
 
 import com.example.carGame.dto.PodiumDTO;
 import com.example.carGame.mapper.PodiumMapper;
@@ -10,14 +10,15 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class CreatePodiumUseCase {
+public class EditPodiumUseCase {
 
     private final PodiumRepository podiumRepository;
     private final PodiumMapper podiumMapper;
 
     @Autowired
-    public CreatePodiumUseCase(PodiumRepository podiumRepository, PodiumMapper podiumMapper) {
+    public EditPodiumUseCase(PodiumRepository podiumRepository, PodiumMapper podiumMapper) {
         this.podiumRepository = podiumRepository;
+
         this.podiumMapper = podiumMapper;
     }
 

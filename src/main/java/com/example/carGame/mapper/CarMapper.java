@@ -9,7 +9,7 @@ import java.util.function.Function;
 @Component
 public class CarMapper {
 
-    public Function<CarDTO, Car> mapperToCar(){
+    public Function<CarDTO, Car> mapperToCar(String idCar){
         return createCar -> {
             Car car = new Car();
             car.setIdCar(createCar.getIdCar());
