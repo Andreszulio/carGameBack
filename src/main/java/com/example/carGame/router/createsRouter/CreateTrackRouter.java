@@ -1,7 +1,7 @@
 package com.example.carGame.router.createsRouter;
 
-import com.example.carGame.dto.PlayerDTO;
-import com.example.carGame.useCase.createsUseCase.CreatePlayerUseCase;
+import com.example.carGame.dto.TrackDTO;
+import com.example.carGame.useCase.createsUseCase.CreateTrackUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -12,17 +12,17 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class CreatePlayerRouter {
+public class CreateTrackRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> createPlayer(CreatePlayerUseCase createPlayerUseCase){
-        return route(POST("/player/create").and(accept(MediaType.APPLICATION_JSON)),
-                request -> request.bodyToMono(PlayerDTO.class)
-                        .flatMap(playerDTO -> createPlayerUseCase.apply(playerDTO)
+    public RouterFunction<ServerResponse> createTrack(CreateTrackUseCase createTrackUseCase) {
+        return route(POST("/track/create").and(accept(MediaType.APPLICATION_JSON)),
+                request -> request.bodyToMono(TrackDTO.class)
+                        .flatMap(trackDTO -> createTrackUseCase.apply(trackDTO)
                                 .flatMap(result -> ServerResponse.ok()
                                         .contentType(MediaType.APPLICATION_JSON)
-                                        .bodyValue(result)
-                                )
+                                        .bodyValue(result))
+
                         )
         );
     }
