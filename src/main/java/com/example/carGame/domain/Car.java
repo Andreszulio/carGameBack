@@ -14,12 +14,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Car {
 
     @Id
-    private final IdCar idCar;
+    private final String idCar;
 
-    private final IdPlayer idPlayer;
-    private final IdLane idLane;
-    private final ConfirmationArrivalGoal confirmationArrivalGoal;
-    private final IdDriver idDriver;
-    private final IdGame idGame;
+    private final String idPlayer;
+    private final String idLane;
+    private final Boolean confirmationArrivalGoal;
+    private final String idDriver;
+    private final String idGame;
 
 }

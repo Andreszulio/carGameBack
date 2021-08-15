@@ -12,11 +12,11 @@ import org.springframework.data.annotation.Id;
 public class Driver {
 
     @Id
-    private IdDriver idDriver;
+    private String idDriver;
 
-    private PositionCurrent positionCurrent;
-    private IdPlayer idPlayer;
-    private IdLane idLane;
-    private IdCar idCar;
+    private Integer positionCurrent;
+    private String idPlayer;
+    private String idLane;
+    private String idCar;
 
 }

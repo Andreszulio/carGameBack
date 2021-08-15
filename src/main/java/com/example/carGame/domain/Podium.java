@@ -16,12 +16,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Podium {
 
     @Id
-    private final IdPodium idPodium;
+    private final String idPodium;
 
-    private final IdPlayer idPlayer;
-    private final QuantityWin first;
-    private final QuantityWin second;
-    private final QuantityWin third;
+    private final String idPlayer;
+    private final Integer first;
+    private final Integer second;
+    private final Integer third;
 
 
 }

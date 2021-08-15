@@ -14,13 +14,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Player {
 
     @Id
-    private final IdPlayer idPlayer;
+    private final String idPlayer;
 
-    private final Name name;
-    private final IdGame idGame;
-    private final IdCar idCar;
-    private final QuantityWin first;
-    private final QuantityWin second;
-    private final QuantityWin third;
+    private final String name;
+    private final String idGame;
+    private final String idCar;
+    private final Integer first;
+    private final Integer second;
+    private final Integer third;
 
 }

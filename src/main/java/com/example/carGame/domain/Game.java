@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Game {
 
     @Id
-    private final IdGame idGame;
-    private final IdTrack idTrack;
+    private final String idGame;
+    private final String idTrack;
 
 }

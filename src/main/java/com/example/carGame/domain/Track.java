@@ -14,12 +14,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Track {
 
     @Id
-    private final IdTrack idTrack;
+    private final String idTrack;
 
-    private final IdLane idLane;
-    private final IdCar idCar;
-    private final IdGame idGame;
-    private final PositionCurrent positionCurrent;
-    private final FinalDisplacement finalDisplacement;
+    private final String idLane;
+    private final String idCar;
+    private final String idGame;
+    private final Integer positionCurrent;
+    private final String finalDisplacement;
 
 }
