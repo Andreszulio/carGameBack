@@ -21,7 +21,7 @@ public class FindPlayersByIdGameUseCase {
         this.playerMapper = playerMapper;
     }
 
-    public Flux<PlayerDTO> getPlayersByGameId(String id){
+    public Flux<PlayerDTO> findPlayersByGameId(String id){
         return playerRepository.findByGameId(id)
                 .flatMap(
                         player -> Flux.just(playerMapper.mapperToPlayerDTO().apply(player))

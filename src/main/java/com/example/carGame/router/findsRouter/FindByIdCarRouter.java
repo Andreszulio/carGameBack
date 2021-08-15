@@ -1,7 +1,7 @@
 package com.example.carGame.router.findsRouter;
 
-import com.example.carGame.dto.PlayerDTO;
-import com.example.carGame.useCase.findsUseCase.FindPlayerUseCase;
+import com.example.carGame.dto.CarDTO;
+import com.example.carGame.useCase.findsUseCase.FindByIdCarUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -13,15 +13,14 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class FindPlayerRouter {
+public class FindByIdCarRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> findAll(FindPlayerUseCase findPlayerUseCase){
-        return route(
-                GET("/get/players").and(accept(MediaType.APPLICATION_JSON)),
+    public RouterFunction<ServerResponse> findByIdCar(FindByIdCarUseCase findByIdCarUseCase){
+        return route(GET("/car/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(BodyInserters.fromPublisher(findPlayerUseCase.findAll(), PlayerDTO.class))
+                        .body(BodyInserters.fromPublisher(findByIdCarUseCase.findById(request.pathVariable("id")), CarDTO.class))
         );
     }
 
