@@ -16,7 +16,9 @@ public class CarMapper {
                     IdCar.of(carDTO.getIdCar()),
                     IdPlayer.of(carDTO.getIdPlayer()),
                     IdLane.of(carDTO.getIdLane()),
-                    new ConfirmationArrivalGoal(carDTO.getConfirmationArrivalGoal())
+                    new ConfirmationArrivalGoal(carDTO.getConfirmationArrivalGoal()),
+                    IdDriver.of(carDTO.getIdDriver()),
+                    IdGame.of(carDTO.getIdGame())
             );
     }
 
@@ -26,7 +28,9 @@ public class CarMapper {
                     car.getIdCar().getValue(),
                     car.getIdPlayer().getValue(),
                     car.getIdLane().getValue(),
-                    car.getConfirmationArrivalGoal().getValue()
+                    car.getConfirmationArrivalGoal().getValue(),
+                    car.getIdDriver().getValue(),
+                    car.getIdGame().getValue()
             );
     }
 }

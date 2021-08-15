@@ -7,6 +7,6 @@ import lombok.Getter;
 @Getter
 public class PositionCurrent {
 
-    private final String value;
+    private final Integer value;
 
 }

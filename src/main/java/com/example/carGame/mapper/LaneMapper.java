@@ -17,7 +17,7 @@ public class LaneMapper {
                     IdCar.of(laneDTO.getIdCar()),
                     IdGame.of(laneDTO.getIdGame()),
                     IdTrack.of(laneDTO.getIdTrack()),
-                    new PositionCurrent(laneDTO.getPositionCurrent())
+                    IdDriver.of(laneDTO.getIdDriver())
             );
     }
 
@@ -28,7 +28,7 @@ public class LaneMapper {
                     lane.getIdCar().getValue(),
                     lane.getIdGame().getValue(),
                     lane.getIdTrack().getValue(),
-                    lane.getPositionCurrent().getValue()
+                    lane.getIdDriver().getValue()
             );
     }
 

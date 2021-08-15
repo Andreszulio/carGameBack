@@ -1,8 +1,8 @@
 package com.example.carGame.repository;
 
-import com.example.carGame.domain.Track;
+import com.example.carGame.dto.TrackDTO;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 
-public interface TrackRepository extends ReactiveMongoRepository<Track, String> {
+public interface TrackRepository extends ReactiveMongoRepository<TrackDTO, String> {
 
 }

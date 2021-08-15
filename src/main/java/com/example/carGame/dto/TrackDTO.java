@@ -18,7 +18,7 @@ public class TrackDTO {
     private String idLane;
     private String idCar;
     private String idGame;
-    private String positionCurrent;
+    private Integer positionCurrent;
     private String finalDisplacement;
 
 }

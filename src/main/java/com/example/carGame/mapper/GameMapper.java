@@ -13,23 +13,19 @@ import java.util.function.Function;
 @Component
 public class GameMapper {
 
-    public Function<GameDTO, Game> mapperToTrack(){
+    public Function<GameDTO, Game> mapperToGame(){
         return gameDTO ->
                 new Game(
                         IdGame.of(gameDTO.getIdGame()),
-                        new ArrayList<Track>(gameDTO.getTracks()),
-                        new ArrayList<Player>(gameDTO.getPlayers()),
-                        new GameState(gameDTO.getGameState())
+                        IdTrack.of(gameDTO.getIdTrack())
                 );
     }
 
-    public Function<Game, GameDTO> mapperToTrackDTO(){
+    public Function<Game, GameDTO> mapperToGameDTO(){
         return game->
                 new GameDTO(
                         game.getIdGame().getValue(),
-                        game.getTracks(),
-                        game.getPlayers(),
-                        game.getGameState().getValue()
+                        game.getIdTrack().getValue()
                 );
     }
 

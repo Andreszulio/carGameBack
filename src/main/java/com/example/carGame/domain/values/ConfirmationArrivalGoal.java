@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public class ConfirmationArrivalGoal {
 
-    private final String value;
+    private final Boolean value;
 
 
 }
