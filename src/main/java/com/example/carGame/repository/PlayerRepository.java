@@ -5,5 +5,5 @@ import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import reactor.core.publisher.Flux;
 
 public interface PlayerRepository extends ReactiveMongoRepository<Player, String> {
-    Flux<Player> findByGameId(String gameId);
+    Flux<Player> findByIdGame(String gameId);
 }

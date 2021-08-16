@@ -17,7 +17,6 @@ public class PlayerDTO {
 
     @Id
     private String idPlayer;
-
     private String name;
     private String idGame;
     private String idCar;

@@ -17,7 +17,6 @@ public class DriverDTO {
 
     @Id
     private String idDriver;
-
     private Integer positionCurrent;
     private String idPlayer;
     private String idLane;

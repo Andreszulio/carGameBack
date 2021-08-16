@@ -4,8 +4,12 @@ import com.example.carGame.dto.LaneDTO;
 import com.example.carGame.mapper.LaneMapper;
 import com.example.carGame.repository.LaneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
 
+@Service
+@Validated
 public class FindByIdLaneUseCase {
 
     private final LaneRepository laneRepository;

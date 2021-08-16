@@ -22,7 +22,7 @@ public class FindCarsByIdDriverUseCase {
     }
 
     public Flux<CarDTO> findCarsByDriverId(String id){
-        return carRepository.findByDriverId(id)
+        return carRepository.findByIdDriver(id)
                 .flatMap(
                         car -> Flux.just(carMapper.mapperToCarDTO().apply(car))
                 );

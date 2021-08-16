@@ -16,7 +16,6 @@ public class CarDTO {
 
     @Id
     private String idCar;
-
     private String idPlayer;
     private String idLane;
     private Boolean confirmationArrivalGoal;

@@ -22,7 +22,7 @@ public class FindPlayersByIdGameUseCase {
     }
 
     public Flux<PlayerDTO> findPlayersByGameId(String id){
-        return playerRepository.findByGameId(id)
+        return playerRepository.findByIdGame(id)
                 .flatMap(
                         player -> Flux.just(playerMapper.mapperToPlayerDTO().apply(player))
                 );

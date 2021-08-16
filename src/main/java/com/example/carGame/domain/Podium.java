@@ -16,7 +16,6 @@ public class Podium {
 
     @Id
     private String idPodium;
-
     private String idPlayer;
     private Integer first;
     private Integer second;

@@ -16,7 +16,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class FindByIdLaneRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> findByIdLane(FindByIdLaneUseCase findByIdLaneUseCase){
+    public RouterFunction<ServerResponse> FindByIdLane(FindByIdLaneUseCase findByIdLaneUseCase){
         return route(GET("/lane/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)

@@ -16,7 +16,6 @@ public class Track {
 
     @Id
     private String idTrack;
-
     private String idLane;
     private String idCar;
     private String idGame;

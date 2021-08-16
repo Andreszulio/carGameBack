@@ -16,7 +16,6 @@ public class PodiumDTO {
 
     @Id
     private String idPodium;
-
     private String idPlayer;
     private Integer first;
     private Integer second;

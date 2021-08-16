@@ -16,7 +16,6 @@ public class LaneDTO {
 
     @Id
     private String idLane;
-
     private String idCar;
     private String idGame;
     private String idTrack;

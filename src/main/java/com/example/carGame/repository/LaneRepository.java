@@ -5,5 +5,5 @@ import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import reactor.core.publisher.Flux;
 
 public interface LaneRepository extends ReactiveMongoRepository<Lane, String> {
-    Flux<Lane> findByTrackId(String id);
+    Flux<Lane> findByIdTrack(String id);
 }

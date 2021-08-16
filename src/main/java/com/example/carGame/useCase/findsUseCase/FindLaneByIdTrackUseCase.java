@@ -21,8 +21,8 @@ public class FindLaneByIdTrackUseCase {
         this.laneMapper = laneMapper;
     }
 
-    public Flux<LaneDTO> getRailByTrackId(String id){
-        return laneRepository.findByTrackId(id)
+    public Flux<LaneDTO> getLaneByTrackId(String id){
+        return laneRepository.findByIdTrack(id)
                 .flatMap(
                         rail -> Flux.just(laneMapper.mapperToLaneDTO().apply(rail))
                 );
